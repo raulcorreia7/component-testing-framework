@@ -1,5 +1,5 @@
 import { mergeDeepRight } from "ramda";
-import * as event from "./event.json";
+import event from "./event.json";
 export interface APIGatewayEventType extends Record<string, unknown> {
   body: string;
   resource: string;
@@ -33,6 +33,5 @@ export interface RequestContext extends Record<string, unknown> {
 
 export const DefaultAPIGatewayEventType: APIGatewayEventType = event;
 
-export const apiGatewayEventWith = (
-  obj: object
-): APIGatewayEventType => mergeDeepRight(DefaultAPIGatewayEventType, obj);
+export const apiGatewayEventWith = (obj: object): APIGatewayEventType =>
+  mergeDeepRight(DefaultAPIGatewayEventType, obj);
