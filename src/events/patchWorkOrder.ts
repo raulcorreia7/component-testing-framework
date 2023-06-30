@@ -20,8 +20,3 @@ export const patchWorkOrder: APIGatewayEventType = apiGatewayEventWith({
     },
   },
 });
-
-export type PatchWorkOrderResponse = {
-  statusCode: number;
-  body: string;
-};

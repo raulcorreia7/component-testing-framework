@@ -18,7 +18,6 @@ describe("Work Orders API", () => {
       getWorkOrder
     );
     const { StatusCode, Payload } = await invokeLambda(client, input);
-
     expect(StatusCode).toBe(StatusCodes.OK);
     expect(Payload).not.toBeNull();
 
@@ -38,7 +37,6 @@ describe("Work Orders API", () => {
     expect(Payload).not.toBeNull();
 
     const request = PatchWorkOrderResponse.parse(Payload);
-
     expect(request.statusCode).toBe(StatusCodes.NO_CONTENT); // 204
     expect(request.body).toBe("");
   });

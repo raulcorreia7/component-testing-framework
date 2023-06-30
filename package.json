@@ -12,6 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "@aws-sdk/client-lambda": "^3.301.0",
+    "@types/convict": "^6.1.2",
+    "@types/convict-format-with-validator": "^6.0.2",
     "@types/dotenv-flow": "^3.2.0",
     "@types/inquirer": "^8.2.6",
     "@types/jest": "^29.5.0",
@@ -26,6 +28,8 @@
     "@aws-sdk/credential-provider-node": "^3.321.1",
     "@aws-sdk/credential-providers": "^3.321.1",
     "@types/ramda": "^0.28.23",
+    "convict": "^6.2.4",
+    "convict-format-with-validator": "^6.2.0",
     "dotenv": "^16.0.3",
     "dotenv-flow": "^3.2.0",
     "http-status-codes": "^2.2.0",

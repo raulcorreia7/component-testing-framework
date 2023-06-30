@@ -4,10 +4,11 @@ import {
   LambdaClient,
 } from "@aws-sdk/client-lambda";
 import { makeGetCredentials } from "./credentials";
+import { config } from "../config";
 
 export function createLambdaClient() {
   return new LambdaClient({
-    region: "eu-west-1",
+    region: config.aws.region,
     credentials: makeGetCredentials(),
   });
 }
