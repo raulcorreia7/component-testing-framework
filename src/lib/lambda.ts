@@ -5,7 +5,7 @@ import {
 } from "@aws-sdk/client-lambda";
 import { makeGetCredentials } from "./credentials";
 
-export function createLambda() {
+export function createLambdaClient() {
   return new LambdaClient({
     region: "eu-west-1",
     credentials: makeGetCredentials(),
