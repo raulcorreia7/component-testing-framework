@@ -21,5 +21,4 @@ const schema = {
 };
 
 const parsedSchema = convict(schema);
-parsedSchema.loadFile;
 export const config = parsedSchema.getProperties();
