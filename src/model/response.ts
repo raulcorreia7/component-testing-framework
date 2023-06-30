@@ -34,8 +34,7 @@ export const GetWorkOrderResponse = fromU8ToJson.pipe(BaseResponseSchema.extend(
 }));
 
 
-export const PatchWorkOrderResponseBaseSchema = z.object({
-  statusCode: z.number(),
+export const PatchWorkOrderResponseBaseSchema = BaseResponseSchema.extend({
   body: z.string()
 })
 
