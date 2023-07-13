@@ -7,7 +7,7 @@ let credentials: Promise<AwsCredentialIdentity> | undefined;
 
 enum CredentialProviderType {
   MFA,
-  Env
+  Env,
 }
 
 export function makeGetCredentials():
@@ -38,7 +38,7 @@ function getCredentialsProvider(credentialType: CredentialProviderType) {
     case CredentialProviderType.MFA: {
       return fromIni({
         profile: process.env.AWS_PROFILE,
-        mfaCodeProvider: getMfaToken
+        mfaCodeProvider: getMfaToken,
       });
     }
   }
@@ -49,7 +49,7 @@ async function getMfaToken(serial: string) {
     name: "token",
     type: "input",
     default: "",
-    message: `MFA token for ${serial}:`
+    message: `MFA token for ${serial}:`,
   });
 
   if (typeof result.token !== "string")

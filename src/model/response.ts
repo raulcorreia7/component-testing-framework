@@ -3,7 +3,7 @@ import { toUtf8 } from "@aws-sdk/util-utf8";
 
 export const BaseResponseSchema = z.object({
   statusCode: z.number(),
-  headers: z.record(z.string()).optional()
+  headers: z.record(z.string()).optional(),
 });
 
 export const fromU8ToJson = z
@@ -28,18 +28,18 @@ export const GetWorkOrderResponseBaseSchema = z.object({
     effectivePorts: z.number(),
     rawPorts: z.number(),
     hardwareManufacturer: z.string(),
-    hardwareModel: z.string()
+    hardwareModel: z.string(),
   }),
-  location: z.object({ id: z.string(), name: z.string() })
+  location: z.object({ id: z.string(), name: z.string() }),
 });
 
 export const PatchWorkOrderResponseBaseSchema = BaseResponseSchema.extend({
-  body: z.string()
+  body: z.string(),
 });
 
 export const GetWorkOrderResponse = fromU8ToJson.pipe(
   BaseResponseSchema.extend({
-    body: fromStringToJson.pipe(GetWorkOrderResponseBaseSchema)
+    body: fromStringToJson.pipe(GetWorkOrderResponseBaseSchema),
   })
 );
 export const PatchWorkOrderResponse = fromU8ToJson.pipe(

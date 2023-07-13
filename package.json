@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "compile": "tsc",
-    "format": "prettier --config .prettierrc 'src/**/*.{ts,json}' --write",
+    "format": "prettier --config .prettierrc 'src/**/*.{ts,json}' 'test/**/*.ts' --write",
     "lint": "eslint . --ext .ts"
   },
   "keywords": [],
