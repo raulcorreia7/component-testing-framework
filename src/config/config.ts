@@ -9,15 +9,15 @@ const schema = {
       doc: "Which AWS Profile to run the application in",
       format: String,
       default: "srs-default",
-      env: "AWS_PROFILE",
+      env: "AWS_PROFILE"
     },
     region: {
       doc: "Which AWS Region to run the application in",
       format: String,
       default: "eu-west-1",
-      env: "AWS_REGION",
-    },
-  },
+      env: "AWS_REGION"
+    }
+  }
 };
 
 const parsedSchema = convict(schema);

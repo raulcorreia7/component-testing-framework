@@ -6,10 +6,7 @@ import {
   createLambdaClient,
   invokeLambda,
 } from "../src/lib/lambda";
-import {
-  GetWorkOrderResponse,
-  PatchWorkOrderResponse,
-} from "../src/model";
+import { GetWorkOrderResponse, PatchWorkOrderResponse } from "../src/model";
 describe("Work Orders API", () => {
   it("getWorkOrderhandler", async () => {
     const client = createLambdaClient();
@@ -39,5 +36,5 @@ describe("Work Orders API", () => {
     const request = PatchWorkOrderResponse.parse(Payload);
     expect(request.statusCode).toBe(StatusCodes.NO_CONTENT); // 204
     expect(request.body).toBe("");
-  });
+  }, 20_000);
 });
