@@ -1,7 +1,7 @@
 {
   "name": "@newmotion/component-testing-framework",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "A testing framework aimed at testing AWS components.",
   "scripts": {
     "test": "jest",
     "compile": "tsc",
@@ -9,9 +9,9 @@
     "lint": "eslint . --ext .ts",
     "release": "rm -rf dist/ && tsc"
   },
-  "keywords": [],
+  "keywords": ["test", "AWS", "lambda"],
   "author": "Raúl Correia",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@aws-sdk/client-lambda": "^3.363.0",
     "@types/convict": "^6.1.2",
