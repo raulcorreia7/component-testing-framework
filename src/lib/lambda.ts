@@ -32,3 +32,9 @@ export async function invokeLambda(
   const response = await lambda.send(command);
   return response;
 }
+
+export const lambda = {
+  createClient: createLambdaClient,
+  createInvokeCommandInput: createInvokeCommandInput,
+  invoke: invokeLambda,
+};

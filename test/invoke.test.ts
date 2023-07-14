@@ -1,20 +1,16 @@
 import { StatusCodes } from "http-status-codes";
-import {
-  createInvokeCommandInput,
-  createLambdaClient,
-  invokeLambda,
-} from "../src/lib/lambda";
+import { lambda } from "../src/lib/";
 
-import { getWorkOrder, patchWorkOrder } from "../src/events"
+import { getWorkOrder, patchWorkOrder } from "../src/events";
 import { GetWorkOrderResponse, PatchWorkOrderResponse } from "../src/model";
 describe("Work Orders API", () => {
   it("getWorkOrderhandler", async () => {
-    const client = createLambdaClient();
-    const input = createInvokeCommandInput(
+    const client = lambda.createClient();
+    const input = lambda.createInvokeCommandInput(
       "tnm-test-work-orders-api-getWorkOrderHandler",
       getWorkOrder
     );
-    const { StatusCode, Payload } = await invokeLambda(client, input);
+    const { StatusCode, Payload } = await lambda.invoke(client, input);
     expect(StatusCode).toBe(StatusCodes.OK);
     expect(Payload).not.toBeNull();
 
@@ -24,12 +20,12 @@ describe("Work Orders API", () => {
   });
 
   it("patchWorkOrderHandler", async () => {
-    const client = createLambdaClient();
-    const input = createInvokeCommandInput(
+    const client = lambda.createClient();
+    const input = lambda.createInvokeCommandInput(
       "tnm-test-work-orders-api-patchWorkOrderHandler",
       patchWorkOrder
     );
-    const { StatusCode, Payload } = await invokeLambda(client, input);
+    const { StatusCode, Payload } = await lambda.invoke(client, input);
     expect(StatusCode).toBe(StatusCodes.OK);
     expect(Payload).not.toBeNull();
 

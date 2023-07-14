@@ -1,6 +1,1 @@
-import { createInvokeCommandInput, createLambdaClient, invokeLambda } from "./lambda";
-export {
-    createLambdaClient,
-    createInvokeCommandInput,
-    invokeLambda,
-}
+export { lambda } from "./lambda";

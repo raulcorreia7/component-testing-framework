@@ -1,5 +1,6 @@
 import { mergeDeepRight } from "ramda";
 import event from "./event.json";
+
 export interface APIGatewayEventType extends Record<string, unknown> {
   body: string;
   resource: string;
