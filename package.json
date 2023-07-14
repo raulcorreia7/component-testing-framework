@@ -1,16 +1,16 @@
 {
-  "name": "intg-tests",
+  "name": "@newmotion/component-testing-framework",
   "version": "1.0.0",
   "description": "",
-  "exports": "./index.js",
   "scripts": {
     "test": "jest",
     "compile": "tsc",
     "format": "prettier --config .prettierrc 'src/**/*.{ts,json}' 'test/**/*.ts' --write",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "release": "rm -rf dist/ && tsc"
   },
   "keywords": [],
-  "author": "",
+  "author": "Raúl Correia",
   "license": "ISC",
   "devDependencies": {
     "@aws-sdk/client-lambda": "^3.363.0",
@@ -46,5 +46,7 @@
   },
   "engines": {
     "node": ">=16"
-  }
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts"
 }

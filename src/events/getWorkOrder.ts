@@ -1,7 +1,7 @@
 import {
   APIGatewayEventType,
   apiGatewayEventWith,
-} from "./ApiGatewayEventType";
+} from "./apiGatewayEventType";
 export const getWorkOrder: APIGatewayEventType = apiGatewayEventWith({
   httpMethod: "POST",
   pathParameters: {

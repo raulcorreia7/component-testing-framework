@@ -1,7 +1,7 @@
 import {
   APIGatewayEventType,
   apiGatewayEventWith,
-} from "./ApiGatewayEventType";
+} from "./apiGatewayEventType";
 export const patchWorkOrder: APIGatewayEventType = apiGatewayEventWith({
   body: JSON.stringify({
     resolution: "L1_ERROR_USER",

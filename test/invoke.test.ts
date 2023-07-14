@@ -1,11 +1,11 @@
 import { StatusCodes } from "http-status-codes";
-import { getWorkOrder } from "../src/events/getWorkOrder";
-import { patchWorkOrder } from "../src/events/patchWorkOrder";
 import {
   createInvokeCommandInput,
   createLambdaClient,
   invokeLambda,
 } from "../src/lib/lambda";
+
+import { getWorkOrder, patchWorkOrder } from "../src/events"
 import { GetWorkOrderResponse, PatchWorkOrderResponse } from "../src/model";
 describe("Work Orders API", () => {
   it("getWorkOrderhandler", async () => {
